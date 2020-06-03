@@ -4,9 +4,7 @@ namespace GarryDzeng\Route {
   use InvalidArgumentException;
 
   /**
-   * @package Lodestone\Router
    * @inheritDoc
-   *
    * For technical reason, this class used stdClass to represents Node structure
    */
   class Table implements Contract\Table {
@@ -152,7 +150,7 @@ namespace GarryDzeng\Route {
       $tokenizer = $this->tokenizer;
 
       if ($pattern == '') {
-        throw new InvalidArgumentException('Pattern for pathname is empty, please given someting.');
+        throw new InvalidArgumentException('Pattern for pathname is empty, please give someting.');
       }
 
       $tokens = $tokenizer->tokenize($pattern);
@@ -479,8 +477,6 @@ namespace GarryDzeng\Route {
           'index'=> 1
         ];
       }
-
-      $value = null;
 
       // check other symbol
       for ($length = strlen($source), $i = 0; $i < $length; $i++) {

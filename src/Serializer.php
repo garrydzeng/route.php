@@ -5,7 +5,6 @@ namespace GarryDzeng\Route {
   use Brick\VarExporter\VarExporter;
 
   /**
-   * @package Lodestone\Route
    * @inheritDoc
    */
   class Serializer implements Contract\Serializer {

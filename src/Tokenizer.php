@@ -4,7 +4,6 @@ namespace GarryDzeng\Route {
   use InvalidArgumentException;
 
   /**
-   * @package Lodestone\Router
    * @inheritDoc
    */
   class Tokenizer implements Contract\Tokenizer {
