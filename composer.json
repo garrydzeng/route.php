@@ -1,0 +1,16 @@
+{
+  "name": "garrydzeng/route",
+  "version": "0.1.0",
+  "autoload": {
+    "psr-4": {
+      "GarryDzeng\\Route\\": "src"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "require": {
+    "brick/varexporter": "^0.2.1",
+    "php": "^7.1"
+  }
+}
