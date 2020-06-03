@@ -1,10 +1,10 @@
 # Usage Guideline
 
-This route component designed to provides fast matching (but it should generate route collection before). in my own performance test (from an real project), it costs 0.03 ms to match from 222 route patterns;
+This route component designed to provides fast matching (but it should generate file before). in my own performance test (from an real project), it costs 0.03 ms to match from 222 route patterns;
 
-## Exampe
+## Example
 
-First, we should define a script that used to generate route file, such as:
+First, we should define a script that used to generate route file (in composer.json), such as:
 ```
 {
   "scripts": {
@@ -12,7 +12,7 @@ First, we should define a script that used to generate route file, such as:
   }
 }
 ```
-Example `scripts/genroute.php` content...
+`scripts/genroute.php` looks like:
 
 ```
 <?php
@@ -37,7 +37,7 @@ if ($state) {
   );
 }
 ```
-Run `composer run-script genroute` to generate route file, and use it in your entry script, such as:
+Run `composer run-script genroute` and use it in your entry script, such as:
 
 ```
 <?php
