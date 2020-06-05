@@ -25,8 +25,8 @@ namespace GarryDzeng\Route {
 
       $tokens_01 = $tokenizer->tokenize('/');
       $tokens_02 = $tokenizer->tokenize('/users/{id}');
-      $tokens_03 = $tokenizer->tokenize('/users/{id}/drafts/{id,[A-Fa-f0-9]\\{32\\}}');
-      $tokens_04 = $tokenizer->tokenize('/{,digit}');
+      $tokens_03 = $tokenizer->tokenize('/users/{id}/drafts/{id=[A-Fa-f0-9]\\{32\\}}');
+      $tokens_04 = $tokenizer->tokenize('/{=digit}');
       $tokens_05 = $tokenizer->tokenize('/{}/');
 
       $this->assertEquals(['/'], $tokens_01);

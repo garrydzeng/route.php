@@ -13,7 +13,7 @@ namespace GarryDzeng\Route {
      * should define by them
      */
     private const ParameterEscape = '\\';
-    private const ParameterSeparator = ',';
+    private const ParameterSeparator = '=';
     private const ParameterStart = '{';
     private const ParameterEnd = '}';
 

@@ -17,10 +17,10 @@ namespace GarryDzeng\Route {
       $state = null;
 
       $state = $table->register($state, '/', 1);
-      $state = $table->register($state, '/users/{id,digit}', 2);
-      $state = $table->register($state, '/users/{id,digit}/profile', 3);
-      $state = $table->register($state, '/users/{id,digit}/', 4);
-      $state = $table->register($state, '/{,hexadecimal}', 5);
+      $state = $table->register($state, '/users/{id=digit}', 2);
+      $state = $table->register($state, '/users/{id=digit}/profile', 3);
+      $state = $table->register($state, '/users/{id=digit}/', 4);
+      $state = $table->register($state, '/{=hexadecimal}', 5);
       $state = $table->register($state, '/supports', 6);
       $state = $table->register($state, '/shop', 7);
 
@@ -97,10 +97,10 @@ namespace GarryDzeng\Route {
       $state = null;
 
       $state = $table->register($state, '/', 1);
-      $state = $table->register($state, '/users/{id,digit}', 2);
-      $state = $table->register($state, '/users/{id,digit}/profile', 3);
-      $state = $table->register($state, '/users/{id,digit}/', 4);
-      $state = $table->register($state, '/{,hexadecimal}', 5);
+      $state = $table->register($state, '/users/{id=digit}', 2);
+      $state = $table->register($state, '/users/{id=digit}/profile', 3);
+      $state = $table->register($state, '/users/{id=digit}/', 4);
+      $state = $table->register($state, '/{=hexadecimal}', 5);
       $state = $table->register($state, '/supports', 6);
       $state = $table->register($state, '/shop', 7);
 
