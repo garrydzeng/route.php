@@ -97,12 +97,10 @@ namespace GarryDzeng\Route {
             );
           }
 
-          $piece = $buff;
           $capturing = !$capturing;
-          $buff = '';
 
           // use default type & numeric name if enclosed with an empty string
-          if (0 === strlen($piece)) {
+          if (0 === strlen($buff)) {
             $tokens[] = [
               'type'=> static::TYPE_STRING,
               'name'=> $key++,
@@ -110,19 +108,18 @@ namespace GarryDzeng\Route {
           }
           else {
 
-            $strpos = strpos($piece, static::ParameterSeparator);
+            $strpos = strpos($buff, static::ParameterSeparator);
 
-            // it has a name but no parameter's type defined....
             if (false === $strpos) {
               $tokens[] = [
                 'type'=> static::TYPE_STRING,
-                'name'=> $piece,
+                'name'=> $buff,
               ];
             }
 
             else {
 
-              $mythos = substr($piece, $strpos + 1);
+              $mythos = substr($buff, $strpos + 1);
 
               // resolve as regex
               if (
@@ -132,7 +129,7 @@ namespace GarryDzeng\Route {
               )
               {
                 $tokens[] = [
-                  'name'=> 0 === $strpos ? $key++ : substr($piece, 0, $strpos),
+                  'name'=> 0 === $strpos ? $key++ : substr($buff, 0, $strpos),
                   'pattern'=> $mythos,
                   'type'=> static::TYPE_REGEX
                 ];
@@ -142,12 +139,14 @@ namespace GarryDzeng\Route {
               // all recognizes by literal (such as: int)
               else {
                 $tokens[] = [
-                  'name'=> 0 === $strpos ? $key++ : substr($piece, 0, $strpos),
+                  'name'=> 0 === $strpos ? $key++ : substr($buff, 0, $strpos),
                   'type'=> $mythos
                 ];
               }
             }
           }
+
+          $buff = '';
         }
         else {
           $buff .= $char;
